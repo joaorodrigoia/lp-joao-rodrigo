@@ -37,7 +37,7 @@ function About() {
               marginTop: 14, fontSize: 11, color: 'var(--muted)',
               letterSpacing: '0.06em',
             }}>
-              João Rodrigo, 21 · Maceió/AL
+              João Rodrigo · Maceió/AL
             </p>
           </div>
 
@@ -49,10 +49,10 @@ function About() {
 
             <div style={{ marginTop: 28, fontSize: 17, lineHeight: 1.7, color: 'var(--ink-2)' }}>
               <p>
-                21 anos, alagoano. Hoje passo a maior parte do tempo escrevendo código, treinando agentes e desenhando fluxos de automação pra empresas que decidiram parar de depender de planilha e celular pessoal.
+                Passo a maior parte do tempo escrevendo código, treinando agentes de IA e desenhando fluxos de automação pra empresas que decidiram parar de depender de planilha e celular pessoal.
               </p>
               <p style={{ marginTop: 16 }}>
-                A história começou na mídia paga. Subindo campanha eu via a mesma cena se repetir: lead chegando, ninguém respondendo, cliente perdendo venda. Aprendi a programar pra consertar isso. Aprendi IA pra escalar a solução. Tráfego virou peça do conjunto, deixou de ser o produto principal.
+                Comecei na mídia paga. Subindo campanha eu via a mesma cena se repetir: lead chegando, ninguém respondendo, cliente perdendo venda. Aprendi a programar pra consertar isso. Aprendi IA pra escalar a solução. Tráfego virou peça do conjunto, deixou de ser o produto principal.
               </p>
               <p style={{ marginTop: 16 }}>
                 Trabalho com poucos clientes por vez. Cada projeto vira caso pra estudar, refinar e documentar. Você sempre fala diretamente comigo, do diagnóstico à entrega.
@@ -64,9 +64,9 @@ function About() {
               gap: 18, paddingTop: 24, borderTop: '1px solid rgba(20,19,15,0.18)',
             }}>
               {[
-                { n: '21', l: 'anos' },
                 { n: '06', l: 'frentes' },
                 { n: '24/7', l: 'rodando' },
+                { n: '15min', l: 'diagnóstico' },
               ].map(s => (
                 <div key={s.l}>
                   <div className="serif" style={{

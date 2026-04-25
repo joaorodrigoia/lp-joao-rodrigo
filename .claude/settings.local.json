@@ -14,7 +14,16 @@
       "Bash(sed -i \"s/Vol. 01 — feita à mão e à máquina/Vol. 01, feita à mão e à máquina/\" Footer.jsx)",
       "Bash(sed -i 's/n=\"—\"/n=\"06\"/' Hero.jsx)",
       "Bash(sed -i \"s/atualizam ao vivo —/atualizam ao vivo./\" ROICalculator.jsx)",
-      "Bash(gh auth *)"
+      "Bash(gh auth *)",
+      "Bash(gh repo *)",
+      "Bash(vercel whoami *)",
+      "Bash(vercel --prod --yes --name lp-joao-rodrigo)",
+      "Bash(vercel ls *)",
+      "Bash(vercel project *)",
+      "Bash(cp lp.html index.html)",
+      "Bash(git add *)",
+      "Bash(git -c user.email=joaorodrigobds15@gmail.com -c user.name=\"João Rodrigo\" commit -m \"Remove personal info: age and personal-sounding bits from About\")",
+      "Bash(git push *)"
     ]
   }
 }
