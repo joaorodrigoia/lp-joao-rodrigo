@@ -33,7 +33,6 @@ function Footer() {
               <ul style={{ listStyle: 'none', margin: '16px 0 0', padding: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
                 <li><a href="#servicos" style={{ fontSize: 15 }}>Serviços</a></li>
                 <li><a href="#processo" style={{ fontSize: 15 }}>Processo</a></li>
-                <li><a href="#calculadora" style={{ fontSize: 15 }}>Calculadora</a></li>
                 <li><a href="#sobre" style={{ fontSize: 15 }}>Sobre</a></li>
                 <li><a href="#faq" style={{ fontSize: 15 }}>FAQ</a></li>
               </ul>

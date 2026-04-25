@@ -23,7 +23,7 @@ function StickyCTA() {
           display: 'inline-block', width: 8, height: 8, borderRadius: '50%',
           background: '#5fdd6e',
         }} />
-        Falar no WhatsApp
+        Consultoria gratuita
         <span aria-hidden>→</span>
       </a>
       <style>{`

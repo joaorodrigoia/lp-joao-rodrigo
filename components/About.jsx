@@ -82,8 +82,8 @@ function About() {
             </div>
 
             <div style={{ marginTop: 32 }}>
-              <WhatsLink className="btn btn-primary" label="Quero conversar">
-                Quero conversar →
+              <WhatsLink className="btn btn-primary" label="Agendar consultoria gratuita">
+                Agendar consultoria gratuita →
               </WhatsLink>
             </div>
           </div>

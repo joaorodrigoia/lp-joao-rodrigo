@@ -45,8 +45,8 @@ function FAQ() {
               Se a sua não está aqui, é só me chamar. Respondo no WhatsApp, sem script.
             </p>
             <div style={{ marginTop: 28 }}>
-              <WhatsLink className="btn btn-ghost" label="Tirar minha dúvida">
-                Tirar minha dúvida →
+              <WhatsLink className="btn btn-ghost" label="Tirar dúvida na consultoria gratuita">
+                Tirar dúvida no WhatsApp →
               </WhatsLink>
             </div>
           </div>

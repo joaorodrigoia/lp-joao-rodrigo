@@ -17,7 +17,6 @@ function Navbar() {
   const links = [
   { label: 'Serviços', href: '#servicos' },
   { label: 'Processo', href: '#processo' },
-  { label: 'Calculadora', href: '#calculadora' },
   { label: 'Sobre', href: '#sobre' },
   { label: 'FAQ', href: '#faq' }];
 
@@ -67,8 +66,8 @@ function Navbar() {
         </ul>
 
         <div className="hide-mobile">
-          <WhatsLink className="btn btn-primary nav-whats" label="Falar no WhatsApp">
-            Falar no WhatsApp
+          <WhatsLink className="btn btn-primary nav-whats" label="Agendar consultoria gratuita">
+            Consultoria gratuita
             <span style={{ fontSize: 12 }}>→</span>
           </WhatsLink>
         </div>
@@ -106,7 +105,7 @@ function Navbar() {
           </ul>
           <div style={{ marginTop: 18 }}>
             <WhatsLink className="btn btn-primary" label="Falar no WhatsApp">
-              Falar no WhatsApp →
+              Consultoria gratuita →
             </WhatsLink>
           </div>
         </div>

@@ -34,12 +34,12 @@ function Hero() {
               </p>
 
               <div style={{ marginTop: 36, display: 'flex', gap: 14, flexWrap: 'wrap', alignItems: 'center' }}>
-                <WhatsLink className="btn btn-primary" label="Falar no WhatsApp">
-                  Conversar no WhatsApp
+                <WhatsLink className="btn btn-primary" label="Agendar consultoria gratuita">
+                  Agendar consultoria gratuita
                   <span aria-hidden style={{ fontSize: 14 }}>→</span>
                 </WhatsLink>
-                <a href="#calculadora" className="btn btn-ghost">
-                  Calcular meu retorno
+                <a href="#servicos" className="btn btn-ghost">
+                  Ver o que eu construo
                 </a>
               </div>
 
@@ -48,7 +48,7 @@ function Hero() {
                 marginTop: 36, fontSize: 12, color: 'var(--muted)',
                 letterSpacing: '0.04em', maxWidth: 460
               }}>
-                Resposta em minutos · Sem pitch forçado · Diagnóstico gratuito de 15 min
+                15 minutos no WhatsApp · Sem pitch · Você sai com 3 caminhos possíveis
               </p>
             </div>
           </div>

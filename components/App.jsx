@@ -8,7 +8,6 @@ function App() {
         <PainPoints />
         <BeforeAfter />
         <Services />
-        <ROICalculator />
         <Process />
         <Differentials />
         <About />

@@ -80,10 +80,10 @@ function Process() {
 
         <div style={{ marginTop: 56, textAlign: 'center' }}>
           <p style={{ color: 'var(--muted)', fontSize: 15, marginBottom: 18 }}>
-            Tudo começa com uma conversa de 15 minutos.
+            O primeiro passo é uma consultoria gratuita de 15 minutos.
           </p>
-          <WhatsLink className="btn btn-primary" label="Começar agora">
-            Começar agora →
+          <WhatsLink className="btn btn-primary" label="Agendar consultoria gratuita">
+            Agendar consultoria gratuita →
           </WhatsLink>
         </div>
       </div>
