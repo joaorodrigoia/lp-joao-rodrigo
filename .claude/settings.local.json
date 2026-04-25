@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx --yes serve \"C:/Users/User/Downloads/Lp-Ig-v2\" -l 5173)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5173/lp.html)",
+      "Bash(sed -i '90,112d' \"C:/Users/User/Downloads/Lp-Ig-v2/components/Hero.jsx\")",
+      "Bash(sed -n '85,95p' \"C:/Users/User/Downloads/Lp-Ig-v2/components/Hero.jsx\")",
+      "Bash(sed -i \"s/WhatsApp — 14 mensagens/WhatsApp: 14 mensagens/\" BeforeAfter.jsx)",
+      "Bash(sed -i \"s/Planilha CRM — atualizar manualmente/Planilha CRM: atualizar na unha/\" BeforeAfter.jsx)",
+      "Bash(sed -i \"s/Almoço — celular tocando sem parar/Almoço com celular tocando sem parar/\" BeforeAfter.jsx)",
+      "Bash(sed -i \"s/Relatório do mês — ainda sem dados/Relatório do mês: ainda sem dados/\" BeforeAfter.jsx)",
+      "Bash(sed -i \"s/Responder DM — começa agora/Responder DM: começa agora/\" BeforeAfter.jsx)",
+      "Bash(sed -i \"s/Tráfego, IA e código sob medida — para quem quer/Sistemas com IA, sob medida, pra quem quer/\" Footer.jsx)",
+      "Bash(sed -i \"s/Vol. 01 — feita à mão e à máquina/Vol. 01, feita à mão e à máquina/\" Footer.jsx)",
+      "Bash(sed -i 's/n=\"—\"/n=\"06\"/' Hero.jsx)",
+      "Bash(sed -i \"s/atualizam ao vivo —/atualizam ao vivo./\" ROICalculator.jsx)",
+      "Bash(gh auth *)"
+    ]
+  }
+}

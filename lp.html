@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>João Rodrigo — IA, tráfego e sistemas que rodam todo dia</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --paper: #F4EFE6;
+    --paper-2: #ECE4D5;
+    --ink: #14130F;
+    --ink-2: #2A2823;
+    --rule: #1f1d18;
+    --muted: #6B635A;
+    --muted-2: #9A9286;
+    --accent: #C73E1D;        /* vermelho-tijolo */
+    --accent-deep: #9C2F12;
+    --highlight: #E9DFC8;     /* marca-texto creme */
+    --serif: 'Instrument Serif', 'Times New Roman', serif;
+    --sans: 'Inter Tight', system-ui, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Grão de papel — sutil */
+  body::after {
+    content: '';
+    position: fixed; inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='280' height='280' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 280px;
+    mix-blend-mode: multiply;
+  }
+
+  ::selection { background: var(--accent); color: var(--paper); }
+
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; padding: 0; }
+
+  .serif { font-family: var(--serif); font-weight: 400; letter-spacing: -0.01em; }
+  .mono  { font-family: var(--mono); }
+  .ital  { font-style: italic; }
+
+  /* Reveal on scroll */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1); }
+  .reveal.in { opacity: 1; transform: none; }
+  .reveal-stagger > * { opacity: 0; transform: translateY(18px); transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); }
+  .reveal-stagger.in > * { opacity: 1; transform: none; }
+  .reveal-stagger.in > *:nth-child(1) { transition-delay: 0ms; }
+  .reveal-stagger.in > *:nth-child(2) { transition-delay: 70ms; }
+  .reveal-stagger.in > *:nth-child(3) { transition-delay: 140ms; }
+  .reveal-stagger.in > *:nth-child(4) { transition-delay: 210ms; }
+  .reveal-stagger.in > *:nth-child(5) { transition-delay: 280ms; }
+  .reveal-stagger.in > *:nth-child(6) { transition-delay: 350ms; }
+  .reveal-stagger.in > *:nth-child(7) { transition-delay: 420ms; }
+  .reveal-stagger.in > *:nth-child(8) { transition-delay: 490ms; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal, .reveal-stagger > * { opacity: 1 !important; transform: none !important; }
+  }
+
+  /* Botões */
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 14px 22px; border-radius: 999px;
+    font-weight: 600; font-size: 15px;
+    transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+    white-space: nowrap;
+  }
+  .btn-primary {
+    background: var(--ink); color: var(--paper);
+    border: 1px solid var(--ink);
+  }
+  .btn-primary:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-1px); }
+  .btn-ghost { border: 1px solid var(--ink); color: var(--ink); }
+  .btn-ghost:hover { background: var(--ink); color: var(--paper); }
+
+  /* Eyebrow */
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .eyebrow::before {
+    content: ''; width: 22px; height: 1px; background: var(--ink); display: inline-block;
+  }
+  .eyebrow.no-rule::before { display: none; }
+
+  /* Container */
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 28px; }
+  .wrap-narrow { max-width: 920px; margin: 0 auto; padding: 0 28px; }
+
+  /* Hairline */
+  .rule { height: 1px; background: var(--ink); opacity: .15; width: 100%; }
+
+  /* Headings */
+  h1, h2, h3, h4 { margin: 0; font-weight: 400; }
+  .display {
+    font-family: var(--serif);
+    font-size: clamp(36px, 5.6vw, 72px);
+    line-height: 1.02;
+    letter-spacing: -0.022em;
+  }
+  .h1 {
+    font-family: var(--serif);
+    font-size: clamp(30px, 4.4vw, 56px);
+    line-height: 1.05;
+    letter-spacing: -0.018em;
+  }
+  .h2 {
+    font-family: var(--serif);
+    font-size: clamp(24px, 3vw, 38px);
+    line-height: 1.15;
+    letter-spacing: -0.012em;
+  }
+  .lede {
+    font-family: var(--serif);
+    font-size: clamp(16px, 1.7vw, 19px);
+    line-height: 1.45;
+    color: var(--ink-2);
+    font-style: italic;
+  }
+
+  /* Highlight marker */
+  mark.h {
+    background: linear-gradient(transparent 60%, var(--highlight) 60%);
+    color: inherit;
+    padding: 0 2px;
+  }
+  mark.accent {
+    background: var(--accent); color: var(--paper);
+    padding: 0 8px; border-radius: 2px;
+  }
+
+  /* Number plate */
+  .numplate {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+
+  /* === MARQUEE === */
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .marquee { display: flex; animation: marquee 38s linear infinite; width: max-content; }
+  .marquee:hover { animation-play-state: paused; }
+</style>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" src="components/utils.jsx"></script>
+  <script type="text/babel" src="components/Navbar.jsx"></script>
+  <script type="text/babel" src="components/Hero.jsx"></script>
+  <script type="text/babel" src="components/Marquee.jsx"></script>
+  <script type="text/babel" src="components/PainPoints.jsx"></script>
+  <script type="text/babel" src="components/BeforeAfter.jsx"></script>
+  <script type="text/babel" src="components/Services.jsx"></script>
+  <script type="text/babel" src="components/ROICalculator.jsx"></script>
+  <script type="text/babel" src="components/Process.jsx"></script>
+  <script type="text/babel" src="components/Differentials.jsx"></script>
+  <script type="text/babel" src="components/About.jsx"></script>
+  <script type="text/babel" src="components/Testimonials.jsx"></script>
+  <script type="text/babel" src="components/FAQ.jsx"></script>
+  <script type="text/babel" src="components/FinalCTA.jsx"></script>
+  <script type="text/babel" src="components/Footer.jsx"></script>
+  <script type="text/babel" src="components/StickyCTA.jsx"></script>
+  <script type="text/babel" src="components/App.jsx"></script>
+
+  <script type="text/babel" data-presets="env,react">
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>
