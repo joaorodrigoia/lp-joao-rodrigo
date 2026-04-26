@@ -27,7 +27,8 @@
       "Bash(vercel --prod --yes)",
       "Bash(sed -i 's/Falar no WhatsApp →/Consultoria gratuita →/' \"C:/Users/User/Downloads/Lp-Ig-v2/components/Navbar.jsx\")",
       "Bash(sed -i 's/>Falar no WhatsApp</>Consultoria gratuita</' \"C:/Users/User/Downloads/Lp-Ig-v2/components/Navbar.jsx\")",
-      "Bash(git -c user.email=joaorodrigobds15@gmail.com -c user.name=\"João Rodrigo\" commit -m \"Remove ROI calculator; unify CTAs around free consultation offer\")"
+      "Bash(git -c user.email=joaorodrigobds15@gmail.com -c user.name=\"João Rodrigo\" commit -m \"Remove ROI calculator; unify CTAs around free consultation offer\")",
+      "Bash(git -c user.email=joaorodrigobds15@gmail.com -c user.name=\"João Rodrigo\" commit -m \"Bidirectional scroll reveal: replay animations on scroll up and down\")"
     ]
   }
 }

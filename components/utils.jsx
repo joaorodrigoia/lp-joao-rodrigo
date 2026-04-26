@@ -6,29 +6,30 @@ const IG_URL = 'https://www.instagram.com/joaorodrigo.ia/';
 const IG_HANDLE = '@joaorodrigo.ia';
 const LOCATION = 'Maceió/AL · atende todo o Brasil';
 
-// Hook: reveal-on-scroll using IntersectionObserver
-// Activates the ref'd node AND any descendants with .reveal / .reveal-stagger classes.
+// Hook: reveal-on-scroll (bidirectional) using IntersectionObserver
+// Adds .in when entering the viewport, removes it when leaving — so the
+// animation replays on scroll up and down.
 function useReveal(options = {}) {
   const ref = React.useRef(null);
   React.useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const activate = () => {
-      if (el.classList.contains('reveal') || el.classList.contains('reveal-stagger')) {
-        el.classList.add('in');
-      }
-      el.querySelectorAll('.reveal, .reveal-stagger').forEach((d) => d.classList.add('in'));
+
+    const targets = [];
+    if (el.classList.contains('reveal') || el.classList.contains('reveal-stagger')) {
+      targets.push(el);
+    }
+    el.querySelectorAll('.reveal, .reveal-stagger').forEach((d) => targets.push(d));
+
+    const setIn = (on) => {
+      targets.forEach((t) => t.classList.toggle('in', on));
     };
+
     const io = new IntersectionObserver(
       (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            activate();
-            io.unobserve(el);
-          }
-        });
+        entries.forEach((e) => setIn(e.isIntersecting));
       },
-      { threshold: 0.05, rootMargin: options.margin || '0px 0px -40px 0px' }
+      { threshold: options.threshold ?? 0.08, rootMargin: options.margin || '0px 0px -60px 0px' }
     );
     io.observe(el);
     return () => io.disconnect();
