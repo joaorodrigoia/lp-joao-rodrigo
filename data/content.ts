@@ -11,7 +11,7 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 
-export const WHATSAPP_NUMBER = '5582981919663';
+export const WHATSAPP_NUMBER = '558287398612';
 export const WHATSAPP_MSG =
   'Olá João, vim pelo Instagram e quero entender mais sobre seus serviços';
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(

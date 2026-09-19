@@ -1,6 +1,6 @@
 // Shared utilities and constants
-const WHATSAPP_NUMBER = '5582981919663';
-const WHATSAPP_MSG = 'Olá João, vim pelo site e quero entender mais sobre seus serviços';
+const WHATSAPP_NUMBER = '558287398612';
+const WHATSAPP_MSG = 'Olá João, vim pelo site e quero conversar sobre a gestão das minhas campanhas.';
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MSG)}`;
 const IG_URL = 'https://www.instagram.com/joaorodrigo.ia/';
 const IG_HANDLE = '@joaorodrigo.ia';
@@ -59,7 +59,7 @@ function useScrollY() {
 // Reusable WhatsApp link
 function WhatsLink({ children, className = 'btn btn-primary', label }) {
   return (
-    <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className={className} aria-label={label || 'Abrir WhatsApp'}>
+    <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className={className} aria-label={label}>
       {children}
     </a>
   );

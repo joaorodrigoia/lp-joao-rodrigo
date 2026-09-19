@@ -54,8 +54,8 @@ export function Footer() {
 }
 
 function formatPhone(num: string) {
-  // 5582981919663 → +55 82 98191-9663
-  const match = num.match(/^(\d{2})(\d{2})(\d{5})(\d{4})$/);
+  // 558287398612 → +55 82 8739-8612
+  const match = num.match(/^(\d{2})(\d{2})(\d{4,5})(\d{4})$/);
   if (!match) return num;
   return `+${match[1]} ${match[2]} ${match[3]}-${match[4]}`;
 }
